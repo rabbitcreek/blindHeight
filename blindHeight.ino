@@ -23,6 +23,7 @@ void loop(){
 int counter = map((dong),1,10,1,6);
 counter = constrain(counter,1,6);
 if (pressure - basePressure > 0.15){
+  if(counter < 6){
   int i = 0;
   while(i < counter){
 digitalWrite(0,HIGH ); // Output analog reading to dimmable LED
@@ -32,5 +33,6 @@ delay(10);
 i++;
   }
   delay(100);
+  } else digitalWrite(0,HIGH);
 }
-}
+}                                                
